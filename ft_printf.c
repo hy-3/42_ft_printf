@@ -6,7 +6,7 @@
 /*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:26:20 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/20 18:58:56 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/20 19:25:33 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,3 +173,46 @@ int	ft_printf(const char *format, ...)
 	va_end(argptr);
 	return 1; //TODO change to prospected return
 }
+
+
+/*
+void	test(int c, ...)
+{
+	va_list	argptr;
+	void	*r;
+	
+	va_start(argptr, c);
+	r = va_arg(argptr, void*); // to test 'p'
+	printf("%p %lu\n", r, r); // convert unsigned long to hexadecimal
+	va_end(argptr);	
+}
+
+int	main(void)
+{
+	test(1, "abc");
+
+	printf("=== original ===\n");
+
+	printf("abc\n", 1);
+	printf("%ia\n", 1);
+	printf("  b\n");
+	printf("% zzzb c\n");
+
+	printf("c: %c\n", 'a');
+	printf("s: %s\n", "abcde");
+	printf("p: %p\n", "abcde");
+	printf("p: %p\n", "axxxx");
+	printf("d: %d\n", -20);
+	printf("i: %i\n", -20);
+	printf("u: %u\n", -20);
+	printf("x: %x\n", -29);
+	printf("X: %X\n", -29);
+	printf("percent: %%\n", 2);
+
+	printf("=== mine ===\n");
+
+	ft_printf("hello world\n");
+	ft_printf("hello %c %s %d %i %% world\n", '-', "abcde", 100, 2);
+	return (1);
+}
+*/
