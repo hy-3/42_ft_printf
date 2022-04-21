@@ -1,4 +1,6 @@
 a.out
-tests/*
+test/*
 *.o
+object_files/*
 libftprintf.a
+.vscode

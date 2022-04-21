@@ -1,13 +1,24 @@
+NAME = libftprintf.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-NAME = libftprintf.a
-SRC = 
+SRC = \
+	ft_printf.c \
+	c_conv.c \
+	s_conv.c \
+	d_i_conv.c \
+	u_conv.c \
+	x_conv.c \
+	is_char_match.c \
+	ft_itoa_int.c \
+	ft_itoa_unsigned_int.c \
+	count_digits.c \
+	ft_putstr.c
 OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar -rcs $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -18,6 +29,6 @@ fclean: clean
 	rm -f $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ)
 
 .PHONY: all re fclean clean

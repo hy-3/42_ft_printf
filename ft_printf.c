@@ -10,129 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-
 #include "ft_printf.h"
 
-int	is_char_match(char c, char *list)
-{
-	int	i;
-	int res;
-
-	i = 0;
-	res = 0;
-	while (list[i] != '\0')
-	{
-		if (list[i] == c)
-			res = 1;
-		i++;
-	}
-	return (res);
-}
-
-// -- c --
-void	c_conversion(va_list argptr)
-{
-	char	res;
-
-	res = (char) va_arg(argptr, int);
-	write(1, &res, 1);
-}
-
-// -- s --
-void	s_conversion(va_list argptr)
-{
-	char	*res;
-
-	res = va_arg(argptr, char*);
-	while (*res != '\0')
-	{
-		write(1, res, 1);
-		res++;
-	}
-}
-
-// -- d & i --
-int	count_digits(int n)
-{
-	int	count;
-
-	count = 0;
-	if (n == 0)
-		count = 1;
-	while (n != 0)
-	{
-		count++;
-		n /= 10;
-	}
-	return (count);
-}
-
-void	ft_putstr(char *s)
-{
-	int	count;
-
-	count = 0;
-	if (s == NULL)
-		return ;
-	while (s[count] != '\0')
-		count++;
-	write(1, s, count);
-}
-
-void	ft_itoa(int n)
-{
-	int		digit;
-	char	*res;
-
-	digit = count_digits(n);
-	if (n < 0)
-		digit++;
-	res = (char *) malloc((digit + 1) * sizeof(char));
-	if (res == NULL)
-		return ;
-	res[digit--] = '\0';
-	if (n < 0)
-		res[0] = '-';
-	if (n == 0)
-		res[0] = '0';
-	while (n != 0)
-	{
-		if (n < 0)
-			res[digit--] = n % 10 * -1 + '0';
-		else
-			res[digit--] = n % 10 + '0';
-		n /= 10;
-	}
-	ft_putstr(res);
-}
-
-void	d_or_i_conversion(va_list argptr)
-{
-	int	res;
-
-	res = va_arg(argptr, int);
-	ft_itoa(res);
-}
-
-// -- u --
-void	u_conversion(va_list argptr)
-{
-	unsigned int	res;
-
-	res = va_arg(argptr, unsigned int);
-	//ft_itoa with unsigned int.
-}
-
-// -- x --
-
-
-// -- X --
-
-// -- p --
-
+#define CONVERSION "cspdiuxX%"
 
 int	ft_printf(const char *format, ...)
 {
@@ -146,22 +26,22 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (is_char_match(format[i], "cspdiuxX%") == 1)
+			if (is_char_match(format[i], CONVERSION) == 1)
 			{
 				if (format[i] == 'c')
-					c_conversion(argptr);
+					c_conv(argptr);
 				if (format[i] == 's')
-					s_conversion(argptr);
+					s_conv(argptr);
 				//if (format[i] == 'p')
-					//p_conversion(argptr);
+					//p_conv(argptr);
 				if (format[i] == 'd' || format[i] == 'i')
-					d_or_i_conversion(argptr);
+					d_i_conv(argptr);
 				if (format[i] == 'u')
-					u_conversion(argptr);
-				//if (format[i] == 'x')
-					//x_conversion(argptr);
-				//if (format[i] == 'X')
-					//X_conversion(argptr);
+					u_conv(argptr);
+				if (format[i] == 'x')
+					x_conv(argptr, 0);
+				if (format[i] == 'X')
+					x_conv(argptr, 1);
 				if (format[i] == '%')
 					write(1, "%", 1);
 			}
@@ -173,46 +53,3 @@ int	ft_printf(const char *format, ...)
 	va_end(argptr);
 	return 1; //TODO change to prospected return
 }
-
-
-/*
-void	test(int c, ...)
-{
-	va_list	argptr;
-	void	*r;
-	
-	va_start(argptr, c);
-	r = va_arg(argptr, void*); // to test 'p'
-	printf("%p %lu\n", r, r); // convert unsigned long to hexadecimal
-	va_end(argptr);	
-}
-
-int	main(void)
-{
-	test(1, "abc");
-
-	printf("=== original ===\n");
-
-	printf("abc\n", 1);
-	printf("%ia\n", 1);
-	printf("  b\n");
-	printf("% zzzb c\n");
-
-	printf("c: %c\n", 'a');
-	printf("s: %s\n", "abcde");
-	printf("p: %p\n", "abcde");
-	printf("p: %p\n", "axxxx");
-	printf("d: %d\n", -20);
-	printf("i: %i\n", -20);
-	printf("u: %u\n", -20);
-	printf("x: %x\n", -29);
-	printf("X: %X\n", -29);
-	printf("percent: %%\n", 2);
-
-	printf("=== mine ===\n");
-
-	ft_printf("hello world\n");
-	ft_printf("hello %c %s %d %i %% world\n", '-', "abcde", 100, 2);
-	return (1);
-}
-*/
