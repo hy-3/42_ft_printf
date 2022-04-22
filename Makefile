@@ -5,6 +5,7 @@ SRC = \
 	ft_printf.c \
 	c_conv.c \
 	s_conv.c \
+	p_conv.c \
 	d_i_conv.c \
 	u_conv.c \
 	x_conv.c \

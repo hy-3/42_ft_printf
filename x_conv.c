@@ -1,8 +1,5 @@
 #include "ft_printf.h"
 
-#define HEX_L "0123456789abcdef"
-#define HEX_C "0123456789ABCDEF"
-
 void	hex_l(unsigned int i)
 {
 	if (i < 16)
@@ -28,6 +25,7 @@ void	hex_c(unsigned int i)
 void	x_conv(va_list argptr, int flag)
 {
 	unsigned int	res;
+
 	res = va_arg(argptr, unsigned int);
 	if (flag == 0)
 		hex_l(res);

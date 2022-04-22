@@ -5,11 +5,15 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#define HEX_L "0123456789abcdef"
+#define HEX_C "0123456789ABCDEF"
+
 int		ft_printf(const char *format, ...);
 void	c_conv(va_list argptr);
 void	s_conv(va_list argptr);
-void	u_conv(va_list argptr);
+void	p_conv(va_list argptr);
 void	d_i_conv(va_list argptr);
+void	u_conv(va_list argptr);
 void	x_conv(va_list argptr, int flag);
 
 // Util

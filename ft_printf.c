@@ -32,8 +32,8 @@ int	ft_printf(const char *format, ...)
 					c_conv(argptr);
 				if (format[i] == 's')
 					s_conv(argptr);
-				//if (format[i] == 'p')
-					//p_conv(argptr);
+				if (format[i] == 'p')
+					p_conv(argptr);
 				if (format[i] == 'd' || format[i] == 'i')
 					d_i_conv(argptr);
 				if (format[i] == 'u')
