@@ -1,5 +1,4 @@
 a.out
-test/*
 *.o
 object_files/*
 libftprintf.a
