@@ -13,7 +13,8 @@ SRC = \
 	ft_itoa_int.c \
 	ft_itoa_unsigned_int.c \
 	count_digits.c \
-	ft_putstr.c
+	ft_putstr.c \
+	ft_putchar.c
 OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)

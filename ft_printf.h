@@ -27,5 +27,6 @@ int				ft_itoa_unsigned_int(unsigned int n);
 int				count_digits_int(int n);
 unsigned int	count_digits_unsigned_int(unsigned int n);
 int				ft_putstr(char *s);
+int				ft_putchar(char c);
 
 #endif

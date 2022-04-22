@@ -54,17 +54,16 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			if (is_char_match(format[i], CONVERSION) == 1)
-				res += convert(format[i], argptr);
-			i++;
+				res += convert(format[i++], argptr);
 		}
-		write(1, &format[i], 1);
-		res++;
-		i++;
+		if (format[i] == '\0')
+			break ;
+		if (format[i] != '%')
+			res += ft_putchar(format[i++]);
 	}
 	va_end(argptr);
 	return (res); //TODO change to prospected return
 }
 
 //TODO check about arg_copy
-//TODO test: edge case, return value
 //TODO divide codes into other subdirs
