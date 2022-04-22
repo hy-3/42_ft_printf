@@ -66,4 +66,6 @@ int	ft_printf(const char *format, ...)
 }
 
 //TODO check about arg_copy
+//TODO check memory leak
 //TODO divide codes into other subdirs
+//TODO take out test dir
