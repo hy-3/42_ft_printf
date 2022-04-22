@@ -1,13 +1,16 @@
 #include "ft_printf.h"
 
-void	s_conv(va_list argptr)
+int	s_conv(va_list argptr)
 {
-	char	*res;
+	char	*arg;
+	int		i;
 
-	res = va_arg(argptr, char*);
-	while (*res != '\0')
+	arg = va_arg(argptr, char*);
+	i = 0;
+	while (arg[i] != '\0')
 	{
-		write(1, res, 1);
-		res++;
+		write(1, &arg[i], 1);
+		i++;
 	}
+	return (i);
 }

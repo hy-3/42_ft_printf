@@ -1,28 +1,28 @@
 #include "ft_printf.h"
 
-void	ft_itoa_int(int n)
+int	ft_itoa_int(int n)
 {
 	int		digit;
-	char	*res;
+	char	*str;
 
 	digit = count_digits_int(n);
 	if (n < 0)
 		digit++;
-	res = (char *) malloc((digit + 1) * sizeof(char));
-	if (res == NULL)
-		return ;
-	res[digit--] = '\0';
+	str = (char *) malloc((digit + 1) * sizeof(char));
+	if (str == NULL)
+		return (0);
+	str[digit--] = '\0';
 	if (n < 0)
-		res[0] = '-';
+		str[0] = '-';
 	if (n == 0)
-		res[0] = '0';
+		str[0] = '0';
 	while (n != 0)
 	{
 		if (n < 0)
-			res[digit--] = n % 10 * -1 + '0';
+			str[digit--] = n % 10 * -1 + '0';
 		else
-			res[digit--] = n % 10 + '0';
+			str[digit--] = n % 10 + '0';
 		n /= 10;
 	}
-	ft_putstr(res);
+	return (ft_putstr(str));
 }

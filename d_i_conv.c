@@ -1,9 +1,9 @@
 #include "ft_printf.h"
 
-void	d_i_conv(va_list argptr)
+int	d_i_conv(va_list argptr)
 {
-	int	res;
+	int	arg;
 
-	res = va_arg(argptr, int);
-	ft_itoa_int(res);
+	arg = va_arg(argptr, int);
+	return (ft_itoa_int(arg));
 }

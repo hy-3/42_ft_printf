@@ -1,34 +1,44 @@
 #include "ft_printf.h"
 
-void	hex_l(unsigned int i)
+int	hex_l(unsigned int i, int count)
 {
 	if (i < 16)
+	{
 		write(1, &HEX_L[i], 1);
+		return (++count);
+	}
 	else
 	{
-		hex_l(i / 16);
+		count = hex_l(i / 16, ++count);
 		write(1, &HEX_L[i % 16], 1);
 	}
+	return (count);
 }
 
-void	hex_c(unsigned int i)
+int	hex_c(unsigned int i, int count)
 {
 	if (i < 16)
+	{
 		write(1, &HEX_C[i], 1);
+		return (++count);
+	}
 	else
 	{
-		hex_c(i / 16);
+		count = hex_c(i / 16, ++count);
 		write(1, &HEX_C[i % 16], 1);
 	}
+	return (count);
 }
 
-void	x_conv(va_list argptr, int flag)
+int	x_conv(va_list argptr, int flag)
 {
-	unsigned int	res;
+	unsigned int	arg;
+	int				res;
 
-	res = va_arg(argptr, unsigned int);
+	arg = va_arg(argptr, unsigned int);
 	if (flag == 0)
-		hex_l(res);
+		res = hex_l(arg, 0);
 	if (flag == 1)
-		hex_c(res);
+		res = hex_c(arg, 0);
+	return (res);
 }

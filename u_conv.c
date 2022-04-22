@@ -1,9 +1,9 @@
 #include "ft_printf.h"
 
-void	u_conv(va_list argptr)
+int	u_conv(va_list argptr)
 {
-	unsigned int	res;
+	unsigned int	arg;
 
-	res = va_arg(argptr, unsigned int);
-	ft_itoa_unsigned_int(res);
+	arg = va_arg(argptr, unsigned int);
+	return (ft_itoa_unsigned_int(arg));
 }

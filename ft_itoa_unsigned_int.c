@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_itoa_unsigned_int(unsigned int n)
+int	ft_itoa_unsigned_int(unsigned int n)
 {
 	int		digit;
 	char	*res;
@@ -8,7 +8,7 @@ void	ft_itoa_unsigned_int(unsigned int n)
 	digit = count_digits_unsigned_int(n);
 	res = (char *) malloc((digit + 1) * sizeof(char));
 	if (res == NULL)
-		return ;
+		return (0);
 	res[digit--] = '\0';
 	if (n == 0)
 		res[0] = '0';
@@ -17,5 +17,5 @@ void	ft_itoa_unsigned_int(unsigned int n)
 		res[digit--] = n % 10 + '0';
 		n /= 10;
 	}
-	ft_putstr(res);
+	return (ft_putstr(res));
 }
