@@ -6,7 +6,7 @@
 /*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:26:20 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/20 19:25:33 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/23 11:24:20 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_printf(const char *format, ...)
 {
 	int		i;
 	int		res;
-	va_list argptr;
+	va_list	argptr;
 
 	i = 0;
 	res = 0;
@@ -62,9 +62,8 @@ int	ft_printf(const char *format, ...)
 			res += ft_putchar(format[i++]);
 	}
 	va_end(argptr);
-	return (res); //TODO change to prospected return
+	return (res);
 }
-
 //TODO check about arg_copy
 //TODO check memory leak
 //TODO divide codes into other subdirs

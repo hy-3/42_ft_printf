@@ -65,10 +65,10 @@ int	main(void)
 
 	// %s
 	printf("\n\n######### s #########\n\n");
-	test_str_1("hello %s\n", "abcdefghijklmopqrstuvwxyz \t \n \v 1234567890 ");
+	test_str_1("hello %s\n", "abcdefghijklmopqrstuvwxyz \t \n \v 01234567890 ");
 	test_str_1("%s", "hello");
 	test_str_3("%s %s %s\n", "abc", "123", "def");
-	// test_str_0("%s"); printf fails with segmentation fault
+	// test_str_0("%s"); <- original printf fails with segmentation fault
 
 	// %p
 	printf("\n\n######### p #########\n\n");
@@ -81,6 +81,7 @@ int	main(void)
 	test_int_1("%p\n", INT_MAX);
 	test_int_1("%p\n", LONG_MIN);
 	test_int_1("%p\n", LONG_MAX);
+	test_int_1("%p\n", ULONG_MAX);
 	test_int_3("%p %p %p\n", 0, 1, -1);
 	test_str_0("%p");
 
@@ -94,6 +95,7 @@ int	main(void)
 	test_int_1("%d\n", INT_MAX);
 	test_int_1("%d\n", LONG_MIN);
 	test_int_1("%d\n", LONG_MAX);
+	test_int_1("%d\n", ULONG_MAX);
 	test_int_3("%d %d %d\n", 0, 1, -1);
 	test_str_0("%d");
 
@@ -107,6 +109,7 @@ int	main(void)
 	test_int_1("%i\n", INT_MAX);
 	test_int_1("%i\n", LONG_MIN);
 	test_int_1("%i\n", LONG_MAX);
+	test_int_1("%i\n", ULONG_MAX);
 	test_int_3("%i %i %i\n", 0, 1, -1);
 	test_str_0("%i");
 
@@ -120,6 +123,7 @@ int	main(void)
 	test_int_1("%u\n", INT_MAX);
 	test_int_1("%u\n", LONG_MIN);
 	test_int_1("%u\n", LONG_MAX);
+	test_int_1("%u\n", ULONG_MAX);
 	test_int_3("%u %u %u\n", 0, 1, -1);
 	test_str_0("%u");
 
@@ -133,6 +137,7 @@ int	main(void)
 	test_int_1("%x\n", INT_MAX);
 	test_int_1("%x\n", LONG_MIN);
 	test_int_1("%x\n", LONG_MAX);
+	test_int_1("%x\n", ULONG_MAX);
 	test_int_3("%x %x %x\n", 0, 1, -1);
 	test_str_1("%x\n", "abc");
 	test_str_0("%x");
@@ -147,30 +152,33 @@ int	main(void)
 	test_int_1("%X\n", INT_MAX);
 	test_int_1("%X\n", LONG_MIN);
 	test_int_1("%X\n", LONG_MAX);
+	test_int_1("%X\n", ULONG_MAX);
 	test_int_3("%X %X %X\n", 0, 1, -1);
 	test_str_1("%X\n", "abc");
 	test_str_0("%X");
 
 	// %%
 	printf("\n\n######### percent #########\n\n");
-	test_str_0("%");
-	test_str_0(" %\n");
-	test_str_0("% \n");
-	test_str_0("% a\n");
-	test_str_0(" % \n");
-	test_str_0(" % a\n");
-	test_str_0(" 　　% 　　\n");
-	test_str_0(" 　　% 　　a\n");
 	test_str_0("%%\n");
 	test_str_0("%%%%%\n");
 	test_str_0("%%%%%%\n");
-	test_str_1("%", "hello\n");
 
-	// other edge
+	// other cases
 	printf("\n\n######### other edge #########\n\n");
 	test_str_0("");
 	test_str_0("abc \0 123");
 	test_str_1("abc%s\0 123", "def");
+	test_str_0("%");
+	test_str_0(" %\n");
+
+	// test_str_0("% \n");
+	// test_str_0("% a\n");
+	// test_str_0(" % \n");
+	// test_str_0(" % a\n");
+	// test_str_0(" 　　% 　　\n");
+	// test_str_0(" 　　% 　　a\n");
+	// test_str_1("%", "hello\n");
+	// test_int_1("%0", 'a');
 
 	return (1);
 }
