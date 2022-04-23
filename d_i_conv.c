@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   d_i_conv.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiyamamo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 11:22:54 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 11:22:55 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/23 12:12:49 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int	d_i_conv(va_list argptr)
 	int	arg;
 
 	arg = va_arg(argptr, int);
-	return (ft_itoa_int(arg));
+	return (itoa_int(arg));
 }

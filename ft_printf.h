@@ -6,7 +6,7 @@
 /*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 11:25:19 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 11:27:22 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/23 12:19:58 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,9 @@ int				x_conv(va_list argptr, int flag);
 
 // Util
 int				is_char_match(char c, char *list);
-int				ft_itoa_int(int n);
-int				ft_itoa_unsigned_int(unsigned int n);
-int				count_digits_int(int n);
-unsigned int	count_digits_unsigned_int(unsigned int n);
-int				ft_putstr(char *s);
-int				ft_putchar(char c);
+int				itoa_int(int n);
+int				itoa_unsigned_int(unsigned int n);
+int				cust_putstr(char *s);
+int				cust_putchar(char c);
 
 #endif

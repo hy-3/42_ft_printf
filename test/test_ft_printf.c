@@ -170,6 +170,10 @@ int	main(void)
 	test_str_1("abc%s\0 123", "def");
 	test_str_0("%");
 	test_str_0(" %\n");
+	test_int_3("%i%d%u%%",1,2,3);
+	test_int_3("%%%i%d%u%%",1,2,3);
+	test_str_3("%s%p%s%%","a","b","c");
+	test_str_3("%%%s%p%s%%","a","b","c");
 
 	// test_str_0("% \n");
 	// test_str_0("% a\n");

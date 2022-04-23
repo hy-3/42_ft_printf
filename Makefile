@@ -10,11 +10,10 @@ SRC = \
 	u_conv.c \
 	x_conv.c \
 	is_char_match.c \
-	ft_itoa_int.c \
-	ft_itoa_unsigned_int.c \
-	count_digits.c \
-	ft_putstr.c \
-	ft_putchar.c
+	itoa_int.c \
+	itoa_unsigned_int.c \
+	cust_putstr.c \
+	cust_putchar.c
 OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)

@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_int.c                                      :+:      :+:    :+:   */
+/*   itoa_int.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiyamamo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 11:21:54 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 11:21:57 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/23 12:20:25 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_itoa_int(int n)
+int	count_digits_int(int n)
+{
+	int	count;
+
+	count = 0;
+	if (n == 0)
+		count = 1;
+	while (n != 0)
+	{
+		count++;
+		n /= 10;
+	}
+	return (count);
+}
+
+int	itoa_int(int n)
 {
 	int		digit;
 	char	*str;
@@ -36,5 +51,5 @@ int	ft_itoa_int(int n)
 			str[digit--] = n % 10 + '0';
 		n /= 10;
 	}
-	return (ft_putstr(str));
+	return (cust_putstr(str));
 }

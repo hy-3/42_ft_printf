@@ -6,7 +6,7 @@
 /*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:26:20 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 11:57:33 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/23 12:20:14 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	convert(char c, va_list argptr)
 	if (c == 'X')
 		res = x_conv(argptr, 1);
 	if (c == '%')
-		res = ft_putchar('%');
+		res = cust_putchar('%');
 	return (res);
 }
 
@@ -56,7 +56,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '\0')
 			break ;
 		if (format[i] != '%')
-			res += ft_putchar(format[i++]);
+			res += cust_putchar(format[i++]);
 	}
 	va_end(argptr);
 	return (res);

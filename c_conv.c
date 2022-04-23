@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   c_conv.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiyamamo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 11:22:49 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 11:22:51 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/23 12:21:20 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,5 @@ int	c_conv(va_list argptr)
 	char	arg;
 
 	arg = (char) va_arg(argptr, int);
-	write(1, &arg, 1);
-	return (1);
+	return (cust_putchar(arg));
 }
