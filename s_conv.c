@@ -19,7 +19,10 @@ int	s_conv(va_list argptr)
 
 	arg = va_arg(argptr, char *);
 	if (arg == NULL)
+	{
+		write(1, "(null)", 6);
 		return (6);
+	}
 	i = 0;
 	while (arg[i] != '\0')
 	{

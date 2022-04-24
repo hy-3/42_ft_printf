@@ -175,14 +175,5 @@ int	main(void)
 	test_str_3("%s%p%s%%","a","b","c");
 	test_str_3("%%%s%p%s%%","a","b","c");
 
-	// test_str_0("% \n");
-	// test_str_0("% a\n");
-	// test_str_0(" % \n");
-	// test_str_0(" % a\n");
-	// test_str_0(" 　　% 　　\n");
-	// test_str_0(" 　　% 　　a\n");
-	// test_str_1("%", "hello\n");
-	// test_int_1("%0", 'a');
-
 	return (1);
 }
