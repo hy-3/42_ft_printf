@@ -68,7 +68,7 @@ int	main(void)
 	test_str_1("hello %s\n", "abcdefghijklmopqrstuvwxyz \t \n \v 01234567890 ");
 	test_str_1("%s", "hello");
 	test_str_3("%s %s %s\n", "abc", "123", "def");
-	// test_str_0("%s"); <- original printf fails with segmentation fault
+	test_str_1(" NULL %s NULL ", NULL);
 
 	// %p
 	printf("\n\n######### p #########\n\n");
