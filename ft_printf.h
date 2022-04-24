@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//TODO check about arg_copy
+//TODO divide codes into other subdirs
+//TODO take out test dir
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 

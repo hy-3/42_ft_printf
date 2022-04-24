@@ -61,7 +61,3 @@ int	ft_printf(const char *format, ...)
 	va_end(argptr);
 	return (res);
 }
-//TODO check about arg_copy
-//TODO check memory leak
-//TODO divide codes into other subdirs
-//TODO take out test dir
