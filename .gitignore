@@ -3,3 +3,4 @@ a.out
 object_files/*
 libftprintf.a
 .vscode
+printfTester/*

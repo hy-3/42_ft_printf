@@ -17,5 +17,5 @@ int	u_conv(va_list argptr)
 	unsigned int	arg;
 
 	arg = va_arg(argptr, unsigned int);
-	return (itoa_unsigned_int(arg));
+	return (cust_putnbr_unsigned_int(arg));
 }

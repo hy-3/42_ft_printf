@@ -10,9 +10,9 @@ SRC = \
 	u_conv.c \
 	x_conv.c \
 	is_char_match.c \
-	itoa_int.c \
-	itoa_unsigned_int.c \
-	cust_putstr.c \
+	base_ten_power.c \
+	cust_putnbr_int.c \
+	cust_putnbr_unsigned_int.c \
 	cust_putchar.c
 OBJ = $(SRC:%.c=%.o)
 

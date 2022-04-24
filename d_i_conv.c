@@ -17,5 +17,5 @@ int	d_i_conv(va_list argptr)
 	int	arg;
 
 	arg = va_arg(argptr, int);
-	return (itoa_int(arg));
+	return (cust_putnbr_int(arg));
 }

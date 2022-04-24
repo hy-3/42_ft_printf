@@ -34,9 +34,9 @@ int				x_conv(va_list argptr, int flag);
 
 // Util
 int				is_char_match(char c, char *list);
-int				itoa_int(int n);
-int				itoa_unsigned_int(unsigned int n);
-int				cust_putstr(char *s);
+int				base_ten_power(int n);
+int				cust_putnbr_int(int n);
+int				cust_putnbr_unsigned_int(unsigned int n);
 int				cust_putchar(char c);
 
 #endif
