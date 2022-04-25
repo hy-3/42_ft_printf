@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cust_putnbr_int.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 11:07:40 by hiyamamo          #+#    #+#             */
+/*   Updated: 2022/04/25 11:08:27 by hiyamamo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	count_digits_int(int n)
@@ -13,7 +25,7 @@ int	count_digits_int(int n)
 	return (count);
 }
 
-int	put_int_min()
+int	put_int_min(void)
 {
 	write(1, "-2147483648", 11);
 	return (11);
