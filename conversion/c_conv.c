@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conv.c                                           :+:      :+:    :+:   */
+/*   c_conv.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 11:22:30 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 11:24:59 by hiyamamo         ###   ########.fr       */
+/*   Created: 2022/04/23 11:22:49 by hiyamamo          #+#    #+#             */
+/*   Updated: 2022/04/25 12:15:27 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../src/ft_printf.h"
 
-int	s_conv(va_list argptr)
+int	c_conv(va_list argptr)
 {
-	char	*arg;
-	int		i;
+	char	arg;
 
-	arg = va_arg(argptr, char *);
-	if (arg == NULL)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	i = 0;
-	while (arg[i] != '\0')
-	{
-		write(1, &arg[i], 1);
-		i++;
-	}
-	return (i);
+	arg = (char) va_arg(argptr, int);
+	return (cust_putchar(arg));
 }

@@ -6,20 +6,15 @@
 /*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 11:25:19 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 12:19:58 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:18:50 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//TODO check about arg_copy
-//TODO divide codes into other subdirs
-//TODO take out test dir
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdlib.h>
 
 # define CONVERSION "cspdiuxX%"
 # define HEX_L "0123456789abcdef"

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cust_putnbr_unsigned_int.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiyamamo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:07:51 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/25 11:07:53 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:15:13 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../src/ft_printf.h"
 
 int	count_digits_unsigned_int(unsigned int n)
 {

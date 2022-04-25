@@ -1,19 +1,22 @@
 NAME = libftprintf.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
+SRC_DIR = src
+CONV_DIR = conversion
+UTIL_DIR = util
 SRC = \
-	ft_printf.c \
-	c_conv.c \
-	s_conv.c \
-	p_conv.c \
-	d_i_conv.c \
-	u_conv.c \
-	x_conv.c \
-	is_char_match.c \
-	base_ten_power.c \
-	cust_putnbr_int.c \
-	cust_putnbr_unsigned_int.c \
-	cust_putchar.c
+	$(SRC_DIR)/ft_printf.c \
+	$(CONV_DIR)/c_conv.c \
+	$(CONV_DIR)/s_conv.c \
+	$(CONV_DIR)/p_conv.c \
+	$(CONV_DIR)/d_i_conv.c \
+	$(CONV_DIR)/u_conv.c \
+	$(CONV_DIR)/x_conv.c \
+	$(UTIL_DIR)/is_char_match.c \
+	$(UTIL_DIR)/base_ten_power.c \
+	$(UTIL_DIR)/cust_putnbr_int.c \
+	$(UTIL_DIR)/cust_putnbr_unsigned_int.c \
+	$(UTIL_DIR)/cust_putchar.c
 OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)

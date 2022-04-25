@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   x_conv.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hiyamamo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 11:23:20 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 11:23:22 by hiyamamo         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:15:48 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../src/ft_printf.h"
 
 int	hex_l(unsigned int i, int count)
 {

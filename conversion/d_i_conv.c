@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c_conv.c                                           :+:      :+:    :+:   */
+/*   d_i_conv.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hiyamamo <hiyamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 11:22:49 by hiyamamo          #+#    #+#             */
-/*   Updated: 2022/04/23 12:21:20 by hiyamamo         ###   ########.fr       */
+/*   Created: 2022/04/23 11:22:54 by hiyamamo          #+#    #+#             */
+/*   Updated: 2022/04/25 12:15:34 by hiyamamo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../src/ft_printf.h"
 
-int	c_conv(va_list argptr)
+int	d_i_conv(va_list argptr)
 {
-	char	arg;
+	int	arg;
 
-	arg = (char) va_arg(argptr, int);
-	return (cust_putchar(arg));
+	arg = va_arg(argptr, int);
+	return (cust_putnbr_int(arg));
 }

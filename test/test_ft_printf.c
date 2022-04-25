@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
-#include "../ft_printf.h"
+#include "../src/ft_printf.h"
 
 int		ft_printf(const char *format, ...);
 
