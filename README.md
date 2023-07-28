@@ -5,6 +5,9 @@ It's a fucntion which replicates printf function of C language.
 The function handles only following conversions.
 >c, s, p, d, i, u, x, X, %
 
+## Overview
+You can check the subject [here](https://github.com/hy-3/42_ft_printf/blob/master/printf.pdf)
+
 ## Usage
 ```
 -- overview --
